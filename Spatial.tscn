@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Camera.gd" type="Script" id=1]
+[ext_resource path="res://block.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Spatial.gd" type="Script" id=3]
+
+[sub_resource type="Environment" id=3]
+ambient_light_color = Color( 0.988235, 0.988235, 0.988235, 1 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="MeshInstance" parent="." instance=ExtResource( 2 )]
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 30, 30 )
+environment = SubResource( 3 )
+projection = 1
+current = true
+size = 50.0
+script = ExtResource( 1 )
